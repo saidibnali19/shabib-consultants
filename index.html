@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Shabib Consultant Services - Islamic Services & Family Guidance
+        </title>
+        <style>
+            /* Global Styles */
+            :root {
+                --primary-color: #006064;
+                --secondary-color: #8d6e63;
+                --accent-color: #00796b;
+                --light-color: #e0f2f1;
+                --dark-color: #263238;
+                --text-color: #212121;
+                --light-text: #eceff1;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: var(--text-color);
+                background-color: #f9f9f9;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* Header Styles */
+            header {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 20px 0;
+                position: relative;
+            }
+
+            .header-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .logo {
+                font-size: 32px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .tagline {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .leader {
+                font-style: italic;
+                margin-bottom: 20px;
+            }
+
+            /* Navigation */
+            nav {
+                background-color: var(--dark-color);
+                padding: 15px 0;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: center;
+                list-style: none;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                padding: 5px 0;
+            }
+
+            nav ul li a:hover {
+                color: var(--light-color);
+                border-bottom: 2px solid var(--light-color);
+            }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(
+                        rgba(0, 96, 100, 0.8),
+                        rgba(0, 96, 100, 0.8)
+                    ),
+                    url("/api/placeholder/1200/600") no-repeat center
+                        center/cover;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: white;
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 18px;
+                max-width: 700px;
+                margin-bottom: 30px;
+            }
+
+            .btn {
+                display: inline-block;
+                background-color: var(--accent-color);
+                color: white;
+                padding: 12px 30px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .btn:hover {
+                background-color: #00695c;
+                transform: translateY(-2px);
+            }
+
+            /* About Section */
+            .about {
+                padding: 60px 0;
+                background-color: white;
+            }
+
+            .section-title {
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 40px;
+                color: var(--primary-color);
+                position: relative;
+            }
+
+            .section-title::after {
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 3px;
+                background-color: var(--accent-color);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .about-content {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            /* Services Section */
+            .services {
+                padding: 60px 0;
+                background-color: var(--light-color);
+            }
+
+            .services-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .service-card {
+                background-color: white;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .service-header {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .service-content {
+                padding: 20px;
+            }
+
+            .service-content ul {
+                list-style-position: inside;
+                margin-top: 15px;
+            }
+
+            .service-content ul li {
+                margin-bottom: 10px;
+            }
+
+            /* Legal Section */
+            .legal {
+                padding: 60px 0;
+                background-color: white;
+            }
+
+            .legal-content {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .legal-list {
+                list-style: none;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .legal-list li {
+                margin-bottom: 10px;
+            }
+
+            /* Contact Section */
+            .contact {
+                padding: 60px 0;
+                background-color: var(--dark-color);
+                color: var(--light-text);
+            }
+
+            .contact-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .contact-info h3 {
+                margin-bottom: 20px;
+                color: var(--light-color);
+            }
+
+            .contact-info p {
+                margin-bottom: 10px;
+            }
+
+            .contact-form {
+                background-color: white;
+                padding: 30px;
+                border-radius: 5px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                color: var(--text-color);
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-family: inherit;
+            }
+
+            .form-group textarea {
+                height: 150px;
+            }
+
+            /* Footer */
+            footer {
+                background-color: var(--dark-color);
+                color: var(--light-text);
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .footer-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .footer-content p {
+                margin-bottom: 10px;
+            }
+
+            /* Media Queries */
+            @media (max-width: 768px) {
+                .hero {
+                    height: 300px;
+                }
+
+                .hero h1 {
+                    font-size: 28px;
+                }
+
+                .hero p {
+                    font-size: 16px;
+                }
+
+                .section-title {
+                    font-size: 24px;
+                }
+
+                nav ul {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                nav ul li {
+                    margin: 5px 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">Shabib Consultant Services</div>
+                    <div class="tagline">
+                        Your Trusted Partner for Islamic Services & Family
+                        Guidance in Nairobi
+                    </div>
+                    <div class="leader">
+                        Led by Sheikh Shabib Omar — Licensed Muslim Marriage
+                        Officer
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#legal">Legal Compliance</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>Islamic Guidance for Life's Important Moments</h1>
+            <p>
+                Professional services rooted in Islamic tradition and Kenyan law
+            </p>
+            <a href="#contact" class="btn">Contact Us Today</a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-content">
+                    <p>
+                        Shabib Consultant Services, led by Sheikh Shabib Omar,
+                        provides Islamic-centered support services with a focus
+                        on marriage, family life, counseling, and religious
+                        education. We serve the Muslim community with integrity,
+                        confidentiality, and professionalism—fully aligned with
+                        Sharia and compliant with Kenyan law.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <div class="services-container">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Islamic Marriage Services</h3>
+                        </div>
+                        <div class="service-content">
+                            <ul>
+                                <li>
+                                    Nikah Officiation by a Licensed Muslim
+                                    Marriage Officer
+                                </li>
+                                <li>
+                                    Issuance of Islamic Marriage Certificates
+                                </li>
+                                <li>
+                                    Registration with the Chief Kadhi's Office
+                                </li>
+                                <li>
+                                    Pre-Marital Counseling based on Islamic
+                                    teachings
+                                </li>
+                                <li>
+                                    Polygamy Documentation & Guidance in line
+                                    with Islamic law
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Marital & Family Counseling</h3>
+                        </div>
+                        <div class="service-content">
+                            <ul>
+                                <li>Marital Counseling & Mediation</li>
+                                <li>
+                                    Conflict Resolution for couples and families
+                                </li>
+                                <li>Divorce Guidance & Emotional Support</li>
+                                <li>Islamic Parenting Advice & Training</li>
+                                <li>
+                                    Youth Mentorship & Moral Development
+                                    Programs
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Islamic Legal & Religious Guidance</h3>
+                        </div>
+                        <div class="service-content">
+                            <ul>
+                                <li>
+                                    Sharia-Based Inheritance Advisory (Mirath)
+                                </li>
+                                <li>
+                                    Zakat Calculation & Distribution Guidance
+                                </li>
+                                <li>Waqf (Endowment) Planning & Management</li>
+                                <li>
+                                    Sharia-Compliant Business & Marriage
+                                    Contracts
+                                </li>
+                                <li>
+                                    Islamic Will (Wasiyyah) Preparation Support
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Community & Educational Services</h3>
+                        </div>
+                        <div class="service-content">
+                            <ul>
+                                <li>Khutbah, Nikah Speeches & Public Talks</li>
+                                <li>
+                                    Islamic Training on Marital Rights & Duties
+                                </li>
+                                <li>
+                                    Workshops on Family Life, Parenting & Youth
+                                    Issues
+                                </li>
+                                <li>
+                                    Spiritual Mentorship & Personal Development
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Compliance Section -->
+        <section class="legal" id="legal">
+            <div class="container">
+                <h2 class="section-title">Legal Compliance</h2>
+                <div class="legal-content">
+                    <p>All services are delivered in accordance with:</p>
+                    <ul class="legal-list">
+                        <li>Marriage Act, Cap 150 (Kenya)</li>
+                        <li>Marriage (Muslim Marriage) Rules, 2017</li>
+                        <li>Chief Kadhi's Office Guidelines</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>Shabib Consultant Services</p>
+                        <p>P.O. Box 41465, GPO Nairobi</p>
+                        <p>Phone: 0714 111 101 / 0784 111 101</p>
+                        <p>Email: [YourEmail@example.com]</p>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p>
+                        Let Sheikh Shabib Omar and our professional team walk
+                        with you through key moments in life with guidance
+                        rooted in Islamic tradition and legal clarity.
+                    </p>
+                    <p>
+                        &copy; 2025 Shabib Consultant Services. All Rights
+                        Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
